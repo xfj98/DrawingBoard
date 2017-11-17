@@ -1,0 +1,10 @@
+paint.out: main.o  board.o case.o
+	gcc -g -Wall -Werror -o paint.out  main.o board.o case.o
+main.o: main.c board.h
+	gcc -g -Wall -Werror -c -o main.o main.c
+board.o: board.c board.h
+	gcc -g -Wall -Werror -c -o board.o board.c
+case.o: case.c case.h
+	gcc -g -Wall -Werror -c -o case.o case.c
+clean:
+	rm -f *.out *.o 
